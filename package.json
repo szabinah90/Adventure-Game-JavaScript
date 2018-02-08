@@ -1,0 +1,15 @@
+{
+  "name": "adventure_game_with_feri",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "readline-sync": "^1.4.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sz. H.",
+  "license": "ISC"
+}
