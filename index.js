@@ -1,11 +1,13 @@
 const readlineSync = require('readline-sync'); // meghívtuk a modult
 
 var player1 = 'Szabina';
+let inventory = {stone: 0, gold: 0, silver: 0, iron: 0, weapon: '', armor: ''};
 
 const entry = (player) => {
+  console.log('You are on the road for quite some time.\nYou are starting to feel the effects of loneliness on your mind, but you have to keep going.\nYou are at a crossroad.');
   var ways = ['right', 'left'];
-  var way = readlineSync.keyInSelect(ways, 'Right or left path? ');
-  console.log('You are following the ' + ways[way] + '-side path.');
+  var way = readlineSync.keyInSelect(ways, 'What do you choose: right or left path? ');
+  console.log('You are following the ' + ways[way] + ' path.');
   if (way === 0) {
     right(player);
   } else if (way === 1) {
@@ -25,6 +27,7 @@ function right (player) {
   switch (mineral) {
     case 0:
       console.log('Congratulations! You mined 8 pieces of stone!');
+      inventory.stone += 8;
       if (readlineSync.keyInYN('Would you like to mine more?')) {
         right(player);
       } else {
@@ -33,6 +36,7 @@ function right (player) {
       break;
     case 1:
       console.log('Congratulations! You mined 1 pieces of gold!');
+      inventory.gold += 1;
       if (readlineSync.keyInYN('Would you like to mine more?')) {
         right(player);
       } else {
@@ -41,6 +45,7 @@ function right (player) {
       break;
     case 2:
       console.log('Congratulations! You mined 3 pieces of silver!');
+      inventory.silver += 3;
       if (readlineSync.keyInYN('Would you like to mine more?')) {
         right(player);
       } else {
@@ -49,6 +54,7 @@ function right (player) {
       break;
     case 3:
       console.log('Congratulations! You mined 6 pieces of iron!');
+      inventory.iron += 6;
       if (readlineSync.keyInYN('Would you like to mine more?')) {
         right(player);
       } else {
